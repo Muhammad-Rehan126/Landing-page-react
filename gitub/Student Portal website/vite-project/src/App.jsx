@@ -29,15 +29,18 @@ export default function App() {
 
     return { isLoggedIn: false, userRole: null, userId: null };
   });
-  const [currentPage, setCurrentPage] = useState('Dashboard');
+  const [currentPage, setCurrentPage] = useState(() => {
+    return window.localStorage.getItem('student-portal-page') || 'Dashboard';
+  });
 
   useEffect(() => {
     if (session.isLoggedIn) {
       window.localStorage.setItem('student-portal-session', JSON.stringify(session));
+      window.localStorage.setItem('student-portal-page', currentPage);
     } else {
       window.localStorage.removeItem('student-portal-session');
     }
-  }, [session]);
+  }, [session, currentPage]);
 
   const handleLoginSuccess = (role, userId) => {
     const normalizedRole = ['student', 'teacher', 'admin'].includes(role) ? role : 'student';
@@ -49,6 +52,7 @@ export default function App() {
   const handleLogout = () => {
     const loggedOutSession = { isLoggedIn: false, userRole: null, userId: null };
     setSession(loggedOutSession);
+    window.localStorage.removeItem('student-portal-page');
     setCurrentPage('Dashboard');
   };
 

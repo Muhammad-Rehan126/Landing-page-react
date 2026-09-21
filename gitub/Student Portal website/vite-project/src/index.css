@@ -68,3 +68,16 @@ button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-
   .dashboard-topbar,.assignment-topbar,.attendance-topbar,.progress-topbar,.quiz-topbar,.teacher-topbar,.admin-topbar,.staff-topbar,.permissions-topbar { flex-direction: column; }
   .feedback-btn,.teacher-feedback,.admin-feedback { align-self: stretch; }
 }
+
+@media (max-width: 700px) {
+  .smit-dashboard-wrapper,.assignment-page,.attendance-page,.progress-page,.quiz-page,.teacher-page,.admin-page,.staff-academic-page,.staff-permissions-page { display: flex !important; align-items: stretch; }
+  .smit-sidebar,.assignment-sidebar,.attendance-sidebar,.progress-sidebar,.quiz-sidebar,.teacher-sidebar,.admin-sidebar,.staff-academic-sidebar,.permissions-sidebar { position: sticky; top: 0; left: 0; flex: 0 0 118px !important; width: 118px !important; height: 100vh; min-height: 560px; padding: 18px 7px !important; border-right: 1px solid var(--border) !important; border-bottom: 0 !important; overflow-y: auto; }
+  .sidebar-logo,.assignment-logo,.attendance-logo,.progress-logo,.quiz-logo,.teacher-logo,.admin-logo,.staff-logo,.permissions-logo { margin-bottom: 26px !important; padding: 0 24px 0 4px !important; font-size: 18px !important; }
+  .sidebar-logo small,.assignment-logo small,.attendance-logo small,.progress-logo small,.quiz-logo small,.teacher-logo small,.admin-logo small,.staff-logo small,.permissions-logo small { font-size: 6px !important; }
+  .sidebar-nav,.assignment-nav,.attendance-nav,.progress-nav,.quiz-nav,.teacher-nav,.admin-nav,.staff-nav,.permissions-nav { display: flex !important; flex-direction: column !important; gap: 5px !important; }
+  .nav-item,.assignment-nav-item,.attendance-nav-item,.progress-nav-item,.quiz-nav-item,.teacher-nav-item,.admin-nav-item,.staff-nav-item,.permissions-nav-item { justify-content: flex-start !important; gap: 6px !important; padding: 9px 5px !important; font-size: 10px !important; white-space: normal; }
+  .nav-icon,.assignment-nav-item b,.attendance-nav-item b,.progress-nav-item b,.quiz-nav-item b,.teacher-nav-item b,.admin-nav-item b,.staff-nav-item b,.permissions-nav-item b { display: inline-flex !important; font-size: 8px !important; flex: 0 0 auto; }
+  .sidebar-user-section,.assignment-user-area,.attendance-user-area,.progress-user-area,.quiz-user-area,.teacher-user-area,.admin-user-area,.staff-user-area,.permissions-user-area { margin-top: 18px; }
+  .user-info-text,.assignment-user-area span:nth-child(2),.attendance-user-area span:nth-child(2),.progress-user-area span:nth-child(2),.quiz-user-area span:nth-child(2),.teacher-user-area span:nth-child(2),.admin-user-area span:nth-child(2) { display: none; }
+  .dashboard-main-content,.assignment-main,.attendance-main,.progress-main,.quiz-main,.teacher-main,.admin-main,.staff-academic-main,.permissions-main { flex: 1 1 auto; width: calc(100vw - 118px); min-width: 0; padding: 18px 10px !important; overflow-x: auto; }
+}
